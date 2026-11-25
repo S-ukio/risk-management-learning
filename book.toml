@@ -1,0 +1,18 @@
+[book]
+authors = ["S-ukio"]
+language = "zh-CN"
+src = "src/zh"
+title = "某音 App 风控参数解析"
+description = "从设备指纹到请求签名：某音 App 风控参数的系统化学习笔记"
+
+[build]
+build-dir = "book/zh"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+additional-css = ["theme/custom.css"]
+no-section-label = true
+
+[output.html.print]
+enable = false

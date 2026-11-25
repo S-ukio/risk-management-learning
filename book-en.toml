@@ -1,0 +1,18 @@
+[book]
+authors = ["S-ukio"]
+language = "en"
+src = "src/en"
+title = "Douyin App Risk Control"
+description = "From device fingerprints to request signatures: bilingual study notes on Douyin App risk-control parameters"
+
+[build]
+build-dir = "book/en"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+additional-css = ["theme/custom.css"]
+no-section-label = true
+
+[output.html.print]
+enable = false

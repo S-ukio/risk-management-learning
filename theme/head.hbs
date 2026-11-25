@@ -1,0 +1,86 @@
+<!-- Risk Management Learning: reading progress + back-to-top -->
+<style>
+  #rml-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    z-index: 10000;
+    transition: width 0.08s linear;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.35);
+  }
+
+  #rml-top {
+    position: fixed;
+    right: 1.8rem;
+    bottom: 1.8rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: var(--links, #2563eb);
+    color: #fff;
+    font-size: 1.15rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(14px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 999;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  }
+
+  #rml-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #rml-top:hover {
+    filter: brightness(1.12);
+  }
+</style>
+
+<script>
+  (function () {
+    function init() {
+      var bar = document.createElement('div');
+      bar.id = 'rml-progress';
+      document.body.appendChild(bar);
+
+      var btn = document.createElement('button');
+      btn.id = 'rml-top';
+      btn.type = 'button';
+      btn.title = '回到顶部 / Back to top';
+      btn.setAttribute('aria-label', '回到顶部 / Back to top');
+      btn.textContent = '↑';
+      document.body.appendChild(btn);
+
+      function onScroll() {
+        var doc = document.documentElement;
+        var max = doc.scrollHeight - doc.clientHeight;
+        bar.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + '%';
+        btn.classList.toggle('visible', doc.scrollTop > 420);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      onScroll();
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

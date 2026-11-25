@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk Management Learning</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f8fc;
+    --card: #ffffff;
+    --fg: #0f172a;
+    --muted: #64748b;
+    --accent: #2563eb;
+    --border: #dbe3ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1220;
+      --card: #111b2e;
+      --fg: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+      --border: #243247;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 32px 20px;
+    background: radial-gradient(1200px 600px at 50% -10%, rgba(37, 99, 235, 0.14), transparent 60%), var(--bg);
+    color: var(--fg);
+    font-family: "Segoe UI", system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+  }
+  main { width: min(920px, 100%); }
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 12px; letter-spacing: -0.02em; }
+  .lead { color: var(--muted); margin: 0 0 30px; line-height: 1.7; max-width: 70ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  a.card {
+    display: block;
+    padding: 22px 22px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+  }
+  .card .tag { font-size: 0.75rem; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; }
+  .card h2 { font-size: 1.2rem; margin: 8px 0 8px; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+  .card .arrow { display: inline-block; margin-top: 14px; color: var(--accent); font-weight: 700; font-size: 0.9rem; }
+  footer { margin-top: 26px; color: var(--muted); font-size: 0.8rem; line-height: 1.7; }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Study Notes · mdBook</div>
+  <h1>Risk Management Learning</h1>
+  <p class="lead">
+    某音 App 风控参数解析：从设备指纹到请求签名。<br>
+    A bilingual, chapter-by-chapter study of Douyin App risk-control parameters — device identity, registration flow, and request signatures.
+  </p>
+
+  <div class="grid">
+    <a class="card" href="zh/index.html">
+      <span class="tag">中文 · CHINESE</span>
+      <h2>某音 App 风控参数解析</h2>
+      <p>五部分 · 设备指纹 · 注册链路 · Khronos / Medusa / Perseus / Gorgon</p>
+      <span class="arrow">开始阅读 →</span>
+    </a>
+    <a class="card" href="en/index.html">
+      <span class="tag">ENGLISH</span>
+      <h2>Douyin App Risk Control</h2>
+      <p>Five parts · fingerprints · registration chain · Khronos / Medusa / Perseus / Gorgon</p>
+      <span class="arrow">Read the book →</span>
+    </a>
+  </div>
+
+  <footer>
+    学习笔记，非操作手册。请仅在你拥有明确授权的设备、账号与环境中开展研究。<br>
+    For authorized security research and study only.
+  </footer>
+</main>
+</body>
+</html>

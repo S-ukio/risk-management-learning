@@ -1,0 +1,60 @@
+name: Build check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'theme/**'
+      - 'book.toml'
+      - 'book-en.toml'
+      - 'scripts/**'
+      - '.github/workflows/build-check.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: peaceiris/actions-mdbook@v2
+        with:
+          mdbook-version: '0.5.4'
+
+      - name: Check relative links (zh)
+        run: python3 -I scripts/check_links.py zh
+
+      - name: Check relative links (en)
+        run: python3 -I scripts/check_links.py en
+
+      - name: Build Chinese
+        run: mdbook build
+
+      - name: Build English
+        run: |
+          cp book.toml book.toml.zh_bak
+          trap 'cp book.toml.zh_bak book.toml; rm -f book.toml.zh_bak' EXIT
+          cp book-en.toml book.toml
+          mdbook build
+          cp book.toml.zh_bak book.toml
+          rm -f book.toml.zh_bak
+          trap - EXIT
+
+      - name: Check SUMMARY parity (zh vs en)
+        run: |
+          zh=$(grep -cE '^\s*-\s*\[' src/zh/SUMMARY.md)
+          en=$(grep -cE '^\s*-\s*\[' src/en/SUMMARY.md)
+          echo "SUMMARY entries — zh: $zh, en: $en"
+          if [ "$zh" -ne "$en" ]; then
+            echo "::error::SUMMARY.md entry count differs (zh=$zh, en=$en). Add new pages to BOTH languages."
+            exit 1
+          fi
+
+      - name: Upload built book
+        uses: actions/upload-artifact@v4
+        with:
+          name: book
+          path: book/
+          retention-days: 7

@@ -1,0 +1,260 @@
+/* ============================================================
+   Risk Management Learning — custom mdBook theme
+   Works with mdBook's light / coal / navy / ayu / rust themes.
+   ============================================================ */
+
+:root {
+  --content-max-width: 880px;
+
+  --rml-accent: #2563eb;
+  --rml-accent-soft: rgba(37, 99, 235, 0.08);
+  --rml-warn: #b45309;
+  --rml-warn-soft: rgba(245, 158, 11, 0.13);
+  --rml-ok: #047857;
+  --rml-ok-soft: rgba(16, 185, 129, 0.10);
+  --rml-gap: #b91c1c;
+  --rml-gap-soft: rgba(239, 68, 68, 0.10);
+  --rml-border: rgba(100, 116, 139, 0.24);
+  --rml-zebra: rgba(100, 116, 139, 0.055);
+  --rml-code-bg: rgba(15, 23, 42, 0.045);
+}
+
+html.navy,
+html.coal,
+html.ayu {
+  --rml-accent: #60a5fa;
+  --rml-accent-soft: rgba(96, 165, 250, 0.13);
+  --rml-warn: #fbbf24;
+  --rml-warn-soft: rgba(251, 191, 36, 0.12);
+  --rml-ok: #34d399;
+  --rml-ok-soft: rgba(52, 211, 153, 0.12);
+  --rml-gap: #f87171;
+  --rml-gap-soft: rgba(248, 113, 113, 0.12);
+  --rml-border: rgba(148, 163, 184, 0.26);
+  --rml-zebra: rgba(148, 163, 184, 0.07);
+  --rml-code-bg: rgba(148, 163, 184, 0.11);
+}
+
+/* ---------- Layout & typography ---------- */
+
+.content {
+  line-height: 1.72;
+}
+
+.content h1 {
+  border-bottom: 2px solid var(--rml-accent);
+  padding-bottom: 0.35em;
+  margin-bottom: 1em;
+  letter-spacing: -0.01em;
+}
+
+.content h2 {
+  border-left: 4px solid var(--rml-accent);
+  padding-left: 0.6em;
+  margin-top: 2.2em;
+  letter-spacing: -0.01em;
+}
+
+.content h3 {
+  color: var(--rml-accent);
+  margin-top: 1.7em;
+}
+
+.content a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.content strong {
+  font-weight: 700;
+}
+
+.content hr {
+  border: none;
+  border-top: 1px dashed var(--rml-border);
+  margin: 2.4em 0;
+}
+
+/* ---------- Tables ---------- */
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.3em 0;
+  font-size: 0.94em;
+  border: 1px solid var(--rml-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.content table th {
+  background: var(--rml-accent-soft);
+  font-weight: 700;
+  text-align: left;
+  padding: 0.55em 0.8em;
+  border-bottom: 2px solid var(--rml-border);
+}
+
+.content table td {
+  padding: 0.5em 0.8em;
+  border-bottom: 1px solid var(--rml-border);
+  vertical-align: top;
+}
+
+.content table tr:nth-child(even) td {
+  background: var(--rml-zebra);
+}
+
+.content table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- Code ---------- */
+
+.content code {
+  background: var(--rml-code-bg);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+
+.content pre {
+  border: 1px solid var(--rml-border);
+  border-radius: 10px;
+  padding: 0.9em 1em;
+  overflow-x: auto;
+}
+
+.content pre code {
+  background: none;
+  padding: 0;
+}
+
+/* ---------- Blockquotes ---------- */
+
+.content blockquote {
+  background: var(--rml-accent-soft);
+  border-left: 4px solid var(--rml-accent);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75em 1.1em;
+  margin: 1.4em 0;
+}
+
+.content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Callouts (use raw HTML in Markdown) ---------- */
+
+.callout {
+  border: 1px solid var(--rml-border);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 0.85em 1.05em;
+  margin: 1.4em 0;
+  background: var(--rml-zebra);
+}
+
+.callout .callout-title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35em;
+}
+
+.callout > p:last-child,
+.callout > ul:last-child {
+  margin-bottom: 0;
+}
+
+.callout.note {
+  border-left-color: var(--rml-accent);
+  background: var(--rml-accent-soft);
+}
+
+.callout.ok {
+  border-left-color: var(--rml-ok);
+  background: var(--rml-ok-soft);
+}
+
+.callout.warn {
+  border-left-color: var(--rml-warn);
+  background: var(--rml-warn-soft);
+}
+
+.callout.gap {
+  border-left-color: var(--rml-gap);
+  background: var(--rml-gap-soft);
+}
+
+/* ---------- Badges ---------- */
+
+.badge {
+  display: inline-block;
+  padding: 0.08em 0.5em;
+  border-radius: 999px;
+  font-size: 0.76em;
+  font-weight: 700;
+  line-height: 1.6;
+  vertical-align: 0.08em;
+  border: 1px solid var(--rml-border);
+  color: var(--rml-accent);
+  background: var(--rml-accent-soft);
+  white-space: nowrap;
+}
+
+.badge.old {
+  color: var(--rml-warn);
+  background: var(--rml-warn-soft);
+}
+
+.badge.new {
+  color: var(--rml-ok);
+  background: var(--rml-ok-soft);
+}
+
+.badge.gap {
+  color: var(--rml-gap);
+  background: var(--rml-gap-soft);
+}
+
+/* ---------- Images ---------- */
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--rml-border);
+  background: #ffffff;
+  padding: 6px;
+}
+
+/* ---------- Sidebar ---------- */
+
+.chapter li.part-title {
+  font-weight: 800;
+  color: var(--rml-accent);
+  margin-top: 0.9em;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 720px) {
+  .content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .content h1 {
+    font-size: 1.55em;
+  }
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  #rml-progress,
+  #rml-top {
+    display: none !important;
+  }
+}

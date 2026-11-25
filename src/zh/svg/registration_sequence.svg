@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" role="img" aria-labelledby="diagram-title">
+<title id="diagram-title">冷启动注册链路</title>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+  </marker>
+  <marker id="arrAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+  </marker>
+  <marker id="arrGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#047857"/>
+  </marker>
+  <marker id="arrGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+  </marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="40" y="44" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">冷启动注册链路</text>
+<text x="40" y="72" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="13" fill="#475569" font-weight="400" text-anchor="start">完整冷注册必须按顺序推进；顺序本身就是服务端建模的一部分。</text>
+<line x1="92" y1="106" x2="92" y2="512" stroke="#93c5fd" stroke-width="2"/>
+<circle cx="92" cy="136" r="15" fill="#2563eb" />
+<text x="92" y="141" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<rect x="126" y="112" width="520" height="50" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="146" y="134" font-family="Cascadia Mono, Consolas, Menlo, monospace" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">device_register</text>
+<text x="146" y="152" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="11" fill="#475569" font-weight="400" text-anchor="start">获取 device_id / iid（klink.amemv.com）</text>
+<rect x="674" y="121" width="92" height="30" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/><text x="720.0" y="139.78" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="10.5" fill="#2563eb" font-weight="600" text-anchor="middle">身份</text>
+<circle cx="92" cy="202" r="15" fill="#2563eb" />
+<text x="92" y="207" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">2</text>
+<rect x="126" y="178" width="520" height="50" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="146" y="200" font-family="Cascadia Mono, Consolas, Menlo, monospace" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">device_report</text>
+<text x="146" y="218" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="11" fill="#475569" font-weight="400" text-anchor="start">Perseus 设备报告</text>
+<rect x="674" y="187" width="92" height="30" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/><text x="720.0" y="205.78" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="10.5" fill="#2563eb" font-weight="600" text-anchor="middle">报告</text>
+<circle cx="92" cy="268" r="15" fill="#2563eb" />
+<text x="92" y="273" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">3</text>
+<rect x="126" y="244" width="520" height="50" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="146" y="266" font-family="Cascadia Mono, Consolas, Menlo, monospace" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">app_log</text>
+<text x="146" y="284" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="11" fill="#475569" font-weight="400" text-anchor="start">首启埋点（Sword 编码）</text>
+<rect x="674" y="253" width="92" height="30" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/><text x="720.0" y="271.78" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="10.5" fill="#2563eb" font-weight="600" text-anchor="middle">埋点</text>
+<circle cx="92" cy="334" r="15" fill="#2563eb" />
+<text x="92" y="339" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">4</text>
+<rect x="126" y="310" width="520" height="50" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="146" y="332" font-family="Cascadia Mono, Consolas, Menlo, monospace" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">get_token</text>
+<text x="146" y="350" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="11" fill="#475569" font-weight="400" text-anchor="start">SDI token 下发</text>
+<rect x="674" y="319" width="92" height="30" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/><text x="720.0" y="337.78" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="10.5" fill="#2563eb" font-weight="600" text-anchor="middle">token</text>
+<circle cx="92" cy="400" r="15" fill="#2563eb" />
+<text x="92" y="405" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">5</text>
+<rect x="126" y="376" width="520" height="50" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="146" y="398" font-family="Cascadia Mono, Consolas, Menlo, monospace" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">activate / activate_record</text>
+<text x="146" y="416" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="11" fill="#475569" font-weight="400" text-anchor="start">激活状态上报</text>
+<rect x="674" y="385" width="92" height="30" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/><text x="720.0" y="403.78" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="10.5" fill="#2563eb" font-weight="600" text-anchor="middle">激活</text>
+<circle cx="92" cy="466" r="15" fill="#2563eb" />
+<text x="92" y="471" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">6</text>
+<rect x="126" y="442" width="520" height="50" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="146" y="464" font-family="Cascadia Mono, Consolas, Menlo, monospace" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">birth()</text>
+<text x="146" y="482" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="11" fill="#475569" font-weight="400" text-anchor="start">养号链路（app_log / stats / alert）</text>
+<rect x="674" y="451" width="92" height="30" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/><text x="720.0" y="469.78" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="10.5" fill="#2563eb" font-weight="600" text-anchor="middle">养号</text>
+<rect x="40" y="528" width="900" height="50" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="60" y="559" font-family="Segoe UI, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="13" fill="#7c2d12" font-weight="600" text-anchor="start">顺序即契约：乱序不必然失败，但会进入长期画像，后续请求权重会降低。</text>
+</svg>
