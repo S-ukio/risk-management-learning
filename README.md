@@ -48,6 +48,14 @@ On Git Bash / macOS / Linux:
 
 The same commands are available in CI via `.github/workflows/build-check.yml`, which builds both languages, checks relative links, and enforces SUMMARY parity.
 
+## Publish with GitHub Pages
+
+1. Push `main` to GitHub.
+2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Open **Actions → Deploy mdBook to GitHub Pages** and run it once if needed.
+
+The workflow builds the Chinese book at `/zh/`, the English book at `/en/`, and the language selector at the repository root.
+
 ## Contributing
 
 When adding or revising a page, update **both** language trees and both `SUMMARY.md` files. See [CONTRIBUTING.md](CONTRIBUTING.md) for the parity checklist, source-gap conventions, and scope boundaries.
